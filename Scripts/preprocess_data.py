@@ -26,7 +26,7 @@ def preprocess_data(input_dir, captions_file, output_dir):
             img_path = os.path.join(input_dir, row['image_id'])
             image = Image.open(img_path).convert('RGB')
             image = transform(image)
-            torch.save(image, os.path.join(folder, row['image_id'].replace('.jpg', '.pt')))
+            torch.save(image, os.path.join(folder, row['image_id'].replace('.jpg','.pt')))
     
     save_images(train_df, os.path.join(output_dir, 'train_images'))
     save_images(val_df, os.path.join(output_dir, 'val_images'))
